@@ -1,4 +1,5 @@
 const wordEl = document.getElementById('word');
+const taskEl = document.getElementById('task');
 const wrongLettersEl = document.getElementById('wrong-letters');
 const playAgainBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
@@ -7,9 +8,22 @@ const finalMessage = document.getElementById('final-message');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
-const words = ['application', 'programming', 'interface', 'wizard', 'computer'];
+const words = ['application', 'programming', 'interface', 'algorithm', 'boolean', 'constant', 'framework', 'expression'];
+const tasks = ['Computer software package that performs a specific function', 
+              'Process of designing and building an executable computer program',
+              'A shared boundary across which two or more separate components of a computer system exchange information', 
+              'Set of instructions or rules designed to solve a definite problem', 
+              'An expression used for creating statements that are either TRUE or FALSE', 
+              'A value that does not change throughout the execution of the program', 
+              'A foundation with a specified level of complexity that may be altered by the programmer, making use of their code',
+              'A legal grouping of letters, symbols, and numbers being used to represent the value of one or more variables',
+            ];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
+console.log(selectedWord)
+let taskIndex = words.indexOf(selectedWord);
+console.log(taskIndex)
+console.log(tasks[7])
 
 const correctLetters = [];
 const wrongLetters = [];
@@ -29,13 +43,15 @@ function displayWord() {
       .join('')}
   `;
 
+  taskEl.innerText = tasks[taskIndex];
+
   /* delete empty spaces coming from the map method because each letter is in a span. */
   //console.log(wordEl.innerText);
   const innerWord = wordEl.innerText.replace(/\n/g, '');
   //console.log(innerWord)
 
   if (innerWord === selectedWord) {
-    finalMessage.innerText = 'Congratulations! You won! 😃';
+    finalMessage.innerText = 'Congratulations! You won! 😃👍🥇';
     popup.style.display = 'flex';
   }
 }
@@ -101,6 +117,7 @@ window.addEventListener('keydown', e => {
     }
   });
 
+const wordNow = selectedWord;
 // Restart game and play again
 playAgainBtn.addEventListener('click', () => {
   //  Empty arrays
@@ -108,7 +125,12 @@ playAgainBtn.addEventListener('click', () => {
   wrongLetters.splice(0);
 
   selectedWord = words[Math.floor(Math.random() * words.length)];
+ 
+  if(selectedWord === wordNow) {
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+  }
 
+  taskIndex = words.indexOf(selectedWord);
   displayWord();
 
   updateWrongLettersEl();
