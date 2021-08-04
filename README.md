@@ -1,11 +1,20 @@
-## Hangman Game
+# Hangman Game
 
-Select a letter to figure out a hidden word in a set amount of chances
+### Select a letter to figure out a hidden word in a set amount of chances
 
-## Project Specifications
+**to take a look please click this link:** 
 
-- Display hangman pole and figure using SVG
-- Generate a random word
+https://lenariem.github.io/hangman_game/
+
+### Technologies used: 
+* JavaScript;
+* CSS;
+* HTML;
+* SVG;
+
+### User can:
+- Display hangman figure using SVG
+- Generate a random task
 - Display word in UI with correct letters
 - Display wrong letters
 - Show notification when select a letter twice
