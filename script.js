@@ -9,7 +9,7 @@ const finalMessage = document.getElementById('final-message');
 const figureParts = document.querySelectorAll('.figure-part');
 
 const words = ['application', 'programming', 'interface', 'algorithm', 'boolean', 'constant', 'framework', 'expression'];
-const tasks = ['Computer software package that performs a specific function', 
+const tasks = ['Software package that performs a specific function', 
               'Process of designing and building an executable computer program',
               'A shared boundary across which two or more separate components of a computer system exchange information', 
               'Set of instructions or rules designed to solve a definite problem', 
