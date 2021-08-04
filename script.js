@@ -22,8 +22,6 @@ const tasks = ['Computer software package that performs a specific function',
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 console.log(selectedWord)
 let taskIndex = words.indexOf(selectedWord);
-console.log(taskIndex)
-console.log(tasks[7])
 
 const correctLetters = [];
 const wrongLetters = [];
@@ -45,7 +43,7 @@ function displayWord() {
 
   taskEl.innerText = tasks[taskIndex];
 
-  /* delete empty spaces coming from the map method because each letter is in a span. */
+  //delete empty spaces coming from the map method because each letter is in a span. 
   //console.log(wordEl.innerText);
   const innerWord = wordEl.innerText.replace(/\n/g, '');
   //console.log(innerWord)
@@ -60,7 +58,7 @@ function displayWord() {
 function updateWrongLettersEl() {
   // Display wrong letters
   wrongLettersEl.innerHTML = `
-    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+    ${wrongLetters.length > 0 ? '<p><b>WRONG</b></p>' : ''}
     ${wrongLetters.map(letter => `<span>${letter}</span>`)}
   `;
 
@@ -100,7 +98,6 @@ window.addEventListener('keydown', e => {
       if (selectedWord.includes(letter)) {
         if (!correctLetters.includes(letter)) {
           correctLetters.push(letter);
-  
           displayWord();
         } else {
           showNotification();

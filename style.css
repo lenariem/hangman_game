@@ -29,6 +29,11 @@ h1 {
   font-style: italic;
   text-align: center;
   padding: 0 2%;
+  background-color: #3198dd6e;
+  border-radius: 10px;
+  padding: 0.5%;
+  text-shadow: 1px 1px 2px #000;
+  letter-spacing: 1px;
 }
 
 .game-container {
@@ -64,7 +69,8 @@ h1 {
 }
 
 .wrong-letters-container span {
-  font-size: 24px;
+  font-size: 26px;
+  text-shadow: 1px 1px 1px red;
 }
 
 .word {
